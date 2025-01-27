@@ -21,3 +21,9 @@ chmod +x run.sh
 ```bash
 ./run.sh        # use it everytime to trigger the TM
 ```
+# Requirements-
+install the following libraries:
+-SDL2
+-SDL2_image
+-SDL2_ttf (ensure you have fonts already present)
+-X11
