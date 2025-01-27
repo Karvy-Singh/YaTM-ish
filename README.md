@@ -1,6 +1,8 @@
 # YATM-ish (Yet Another Tiling Manager-ish)
 A very rough imitation of "Snap-Layout" feature (-of Windows) in Linux (as a tiling manager)
 
+https://github.com/Karvy-Singh/YATM-ish/blob/main/walkthrough.mp4
+
 To Setup and run-
 ```bash
 git clone https://github.com/Karvy-Singh/YATM-ish.git
