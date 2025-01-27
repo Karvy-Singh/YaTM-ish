@@ -1,9 +1,13 @@
+
 #!/bin/bash
 
-# Variables
+# Define variables
+SCRIPT_NAME="windows.sh"
 SERVICE_NAME="windows.service"
-SERVICE_PATH="/etc/systemd/system/$SERVICE_NAME"
-SCRIPT_PATH="/usr/local/bin/windows.sh" # Replace with the path to your script
+INSTALL_DIR="/usr/local/bin/$SCRIPT_NAME"
+SERVICE_DIR="/etc/systemd/system/$SERVICE_NAME"
+
+echo "Uninstalling $SCRIPT_NAME..."
 
 # Stop the service
 echo "Stopping the service..."
@@ -13,26 +17,25 @@ sudo systemctl stop $SERVICE_NAME
 echo "Disabling the service..."
 sudo systemctl disable $SERVICE_NAME
 
-# Remove the service file
-if [ -f "$SERVICE_PATH" ]; then
-    echo "Removing service file..."
-    sudo rm "$SERVICE_PATH"
+# Remove the systemd service file
+if [ -f "$SERVICE_DIR" ]; then
+    echo "Removing systemd service file..."
+    sudo rm -f "$SERVICE_DIR"
 else
-    echo "Service file not found at $SERVICE_PATH"
+    echo "Service file not found: $SERVICE_DIR"
 fi
 
-# Remove the script
-if [ -f "$SCRIPT_PATH" ]; then
-    echo "Removing script..."
-    rm "$SCRIPT_PATH"
-else
-    echo "Script not found at $SCRIPT_PATH"
-fi
-
-# Reload systemd daemon to apply changes
+# Reload the systemd daemon
 echo "Reloading systemd daemon..."
 sudo systemctl daemon-reload
 
-# Confirm uninstallation
-echo "Uninstallation complete. Service and script have been removed."
+# Remove the script from /usr/local/bin
+if [ -f "$INSTALL_DIR" ]; then
+    echo "Removing the script from $INSTALL_DIR..."
+    sudo rm -f "$INSTALL_DIR"
+else
+    echo "Script file not found: $INSTALL_DIR"
+fi
+
+echo "Uninstallation complete. $SCRIPT_NAME and its service have been removed."
 
