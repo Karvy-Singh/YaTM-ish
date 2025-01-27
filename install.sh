@@ -3,18 +3,27 @@
 # Define variables
 SCRIPT_NAME="windows.sh"
 SERVICE_NAME="windows.service"
-INSTALL_DIR="/usr/local/bin"
-SERVICE_DIR="/etc/systemd/system"
+INSTALL_DIR="$(pwd)/$SCRIPT_NAME"
+SERVICE_DIR="/etc/systemd/system/$SERVICE_NAME"
 
 echo "Installing $SCRIPT_NAME..."
+
+echo "[Unit]
+Description=Run windows.sh at startup
+After=
+
+[Service]
+ExecStart=/usr/bin/nohup $INSTALL_DIR
+Restart=always
+WorkingDirectory=$(pwd)
+
+[Install]
+WantedBy=multi-user.target
+" | sudo tee $SERVICE_DIR
 
 # Copy the script to /usr/local/bin
 sudo cp $SCRIPT_NAME $INSTALL_DIR/
 sudo chmod +x $INSTALL_DIR/$SCRIPT_NAME
-
-# Copy the service file to systemd
-echo "Setting up systemd service..."
-sudo cp $SERVICE_NAME $SERVICE_DIR/
 
 # Enable and start the service
 sudo systemctl enable $SERVICE_NAME
