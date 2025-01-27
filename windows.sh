@@ -46,7 +46,7 @@ monitor_windows() {
       fi
     done
 
-    sleep 5 # Check for new windows every 5 seconds
+    sleep 2 # Check for new windows every 5 seconds
   done
 }
 
