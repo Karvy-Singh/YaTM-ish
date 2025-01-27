@@ -22,7 +22,7 @@ WantedBy=multi-user.target
 " | sudo tee $SERVICE_DIR
 
 # Copy the script to /usr/local/bin
-sudo chmod +x $INSTALL_DIR
+sudo chmod +x "$INSTALL_DIR"
 
 # Enable and start the service
 sudo systemctl enable $SERVICE_NAME
