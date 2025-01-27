@@ -23,7 +23,7 @@ chmod +x run.sh
 ```
 # Requirements-
 install the following libraries:
-*SDL2
-*SDL2_image
-*SDL2_ttf (ensure you have fonts already present)
-*X11
+* SDL2
+* SDL2_image
+* SDL2_ttf (ensure you have fonts already present)
+* X11
