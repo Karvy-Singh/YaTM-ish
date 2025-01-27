@@ -1,0 +1,12 @@
+[Unit]
+Description=My Script
+After=
+Wants=
+
+[Service]
+ExecStart=/usr/local/bin/windows.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
