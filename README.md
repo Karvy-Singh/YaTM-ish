@@ -21,6 +21,7 @@ chmod +x run.sh
 ```bash
 ./run.sh        # use it everytime to trigger the TM
 ```
+Press number keys to select the desired configuration
 # Requirements-
 install the following libraries:
 * SDL2
