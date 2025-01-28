@@ -330,10 +330,10 @@ int main()
         drawStyledRect(rend, &rect10, fillColor, borderColor);
         drawStyledRect(rend, &rect11, fillColor, borderColor);
 
-        snprintf(line1, sizeof(line1), "%s & %s", array[0], array[1]);
-        snprintf(line2, sizeof(line2), "%s & %s", array[1], array[2]);
-        snprintf(line3, sizeof(line3), "%s & %s", array[0], array[2]);
-        snprintf(line4, sizeof(line4), "%s & %s & %s", array[0], array[1], array[2]);
+        snprintf(line1, sizeof(line1), "1. %s & %s", array[0], array[1]);
+        snprintf(line2, sizeof(line2), "2. %s & %s", array[1], array[2]);
+        snprintf(line3, sizeof(line3), "3. %s & %s", array[0], array[2]);
+        snprintf(line4, sizeof(line4), "4. %s & %s & %s", array[0], array[1], array[2]);
 
         if (line1[0] != '\0' && line2[0] != '\0') {
             insert_text(2, font, line1, &rect1,  rend);
@@ -352,8 +352,8 @@ int main()
         drawStyledRect(rend, &rect5, fillColor, borderColor);
         drawStyledRect(rend, &rect6, fillColor, borderColor);
 
-        snprintf(line1, sizeof(line1), "%s & %s", array[0], array[1]);
-        snprintf(line2, sizeof(line2), "%s & %s", array[0], array[1]);
+        snprintf(line1, sizeof(line1), "1. %s & %s", array[0], array[1]);
+        snprintf(line2, sizeof(line2), "2. %s & %s", array[0], array[1]);
 
         if (line1[0] != '\0' && line2[0] != '\0') {
             insert_text(2, font, line1, &rect1, rend);
