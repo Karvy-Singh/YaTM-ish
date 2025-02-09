@@ -1,7 +1,7 @@
 # YaTM-ish (Yet Another Tiling Manager-ish)
 A very rough imitation of "Snap-Layout" feature (-of Windows) in Linux (as a tiling manager)
 
-### Note: Cloning the repo and and running intsall.sh will trigger a bash script which will always run in background since system start-up. To uninstall just run uninstall.sh
+### Note: Cloning the repo and and running install.sh will trigger a bash script which will always run in background since system start-up. To uninstall just run uninstall.sh
 
 https://github.com/user-attachments/assets/ef355f34-1551-4d2a-af5a-517de2c6469f
 
